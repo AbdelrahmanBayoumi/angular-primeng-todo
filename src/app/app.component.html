@@ -1,3 +1,33 @@
+<div class="flex align-items-center justify-content-center m-5">
+  <span class="p-float-label">
+    <p-dropdown
+      [options]="themes"
+      [(ngModel)]="selectedTheme"
+      optionLabel="name"
+      placeholder="Select a theme"
+      inputId="theme-label"
+      (ngModelChange)="changeTheme($event)"
+    >
+      <ng-template pTemplate="selectedItem">
+        <div class="flex align-items-center gap-2" *ngIf="selectedTheme">
+          <img
+            [src]="selectedTheme.image"
+            alt="theme icon"
+            style="width: 18px"
+          />
+          <div>{{ selectedTheme.name }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-theme pTemplate="item">
+        <div class="flex align-items-center gap-2">
+          <img [src]="theme.image" style="width: 18px" alt="theme icon" />
+          <div>{{ theme.name }}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+    <label for="theme-label">Select Theme</label></span
+  >
+</div>
 <div class="flex flex-column align-items-center justify-content-center h-full">
   <p-card header="Todo" class="w-11">
     <div class="m-2 flex justify-content-center">

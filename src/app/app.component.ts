@@ -4,12 +4,13 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { KnobModule } from 'primeng/knob';
 import { TableModule } from 'primeng/table';
 import { AppService } from './app.service';
-import { Todo } from './todo';
-
+import { Todo } from './models/todo';
+import { Theme, ThemeService } from './services/theme.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,17 +23,30 @@ import { Todo } from './todo';
     ButtonModule,
     InputTextModule,
     KnobModule,
+    DropdownModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  themes: Theme[];
+  selectedTheme: Theme;
   @ViewChild('todoTask') todoTask!: NgModel;
 
   todos: Todo[] = [];
   checkedCounter: number = 0;
 
-  constructor(private appService: AppService) {}
+  constructor(
+    private appService: AppService,
+    public themeService: ThemeService
+  ) {
+    this.themes = this.themeService.getThemeList();
+    this.selectedTheme = this.themeService.selectedTheme;
+  }
+
+  changeTheme(theme: Theme) {
+    this.themeService.switchTheme(theme);
+  }
 
   ngOnInit(): void {
     this.getList();
