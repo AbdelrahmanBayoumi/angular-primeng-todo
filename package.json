@@ -1,6 +1,7 @@
 {
   "name": "angular-primeng-todo",
-  "version": "0.0.0",
+  "description": "To-Do List with Angular and PrimeNG",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
