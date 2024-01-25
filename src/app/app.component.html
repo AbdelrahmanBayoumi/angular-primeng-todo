@@ -1,21 +1,22 @@
 <div class="flex flex-column align-items-center justify-content-center h-full">
   <p-card header="Todo" class="w-11">
-    <div class="m-2 flex">
-      <div>
-        <span class="p-float-label">
-          <input
-            type="text"
-            pInputText
-            [ngModel]="todoTask.value"
-            #todoTask="ngModel"
-            required
-            (keyup.enter)="addTodo()"
-            id="todo"
-            class="w-full"
-          />
-          <label for="todo">new todo</label>
-        </span>
-      </div>
+    <div class="m-2 flex justify-content-center">
+      <p-knob [(ngModel)]="checkedCounter"></p-knob>
+    </div>
+    <div class="m-2 flex justify-content-center">
+      <span class="p-float-label flex-grow-1">
+        <input
+          type="text"
+          pInputText
+          [ngModel]="todoTask.value"
+          #todoTask="ngModel"
+          required
+          (keyup.enter)="addTodo()"
+          id="todo"
+          class="w-full"
+        />
+        <label for="todo">new todo</label>
+      </span>
       <p-button
         icon="pi pi-check"
         class="ml-1"

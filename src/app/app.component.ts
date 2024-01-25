@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
+import { KnobModule } from 'primeng/knob';
 import { TableModule } from 'primeng/table';
 import { AppService } from './app.service';
 import { Todo } from './todo';
@@ -21,7 +21,7 @@ import { Todo } from './todo';
     FormsModule,
     ButtonModule,
     InputTextModule,
-    RouterOutlet,
+    KnobModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -30,6 +30,7 @@ export class AppComponent {
   @ViewChild('todoTask') todoTask!: NgModel;
 
   todos: Todo[] = [];
+  checkedCounter: number = 0;
 
   constructor(private appService: AppService) {}
 
@@ -39,6 +40,9 @@ export class AppComponent {
 
   getList(): void {
     this.todos = this.appService.getTodoList();
+    this.checkedCounter =
+      (this.todos.filter((todo) => todo.completed).length / this.todos.length) *
+      100;
   }
 
   updateTodo(e: any, todo: Todo): void {
