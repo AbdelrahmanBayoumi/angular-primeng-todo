@@ -54,9 +54,17 @@ export class AppComponent {
 
   getList(): void {
     this.todos = this.appService.getTodoList();
-    this.checkedCounter =
-      (this.todos.filter((todo) => todo.completed).length / this.todos.length) *
-      100;
+    if (this.todos.length > 0) {
+      this.checkedCounter = parseFloat(
+        (
+          (this.todos.filter((todo) => todo.completed).length /
+            this.todos.length) *
+          100
+        ).toFixed(2)
+      );
+    } else {
+      this.checkedCounter = 0;
+    }
   }
 
   updateTodo(e: any, todo: Todo): void {
