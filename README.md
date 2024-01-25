@@ -1,27 +1,47 @@
-# AngularPrimengTodo
+# Todo App with Angular & PrimeNG 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+This project is a simple yet powerful To-Do List application built with Angular 17 and PrimeNG. It features a clean user interface for managing your daily tasks with ease. The app uses PrimeNG UI components for Angular to deliver a responsive and accessible experience.
 
-## Development server
+![image](https://github.com/AbdelrahmanBayoumi/angular-primeng-todo/assets/48678280/d0c36e92-c867-4752-940f-d39664016ff6)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Before running the project, make sure you have the following installed:
+- Node.js (which includes npm)
+- Angular CLI
 
-## Running unit tests
+### Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository to your local machine.
+2. Navigate to the project directory and run `npm install` to install all the dependencies.
 
-## Running end-to-end tests
+### Development Server
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Further help
+### Build
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Features
+
+- Add, delete, and mark tasks as completed.
+- Responsive design that works on desktop and mobile browsers.
+- Utilizes PrimeNG components for a sleek interface.
+
+## Built With
+
+- [Angular](https://angular.io/) - The web framework used.
+- [PrimeNG](https://www.primefaces.org/primeng/) - The UI component suite for Angular.
+
+## Acknowledgments
+This project is implementaion of this tutorial: https://youtu.be/kBXjnmKm4ow?si=yC6zoz2-vvEINJ9v
+
+## Support
+
+For any additional information or support, feel free to contact me: https://abdelrahmanbayoumi.github.io/
