@@ -9,6 +9,7 @@
           placeholder="Enter new todo"
           #todoTask="ngModel"
           required
+          (keyup.enter)="addTodo()"
         />
       </div>
       <p-button
