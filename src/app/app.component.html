@@ -2,15 +2,19 @@
   <p-card header="Todo" class="w-11">
     <div class="m-2 flex">
       <div>
-        <input
-          type="text"
-          pInputText
-          [ngModel]="todoTask.value"
-          placeholder="Enter new todo"
-          #todoTask="ngModel"
-          required
-          (keyup.enter)="addTodo()"
-        />
+        <span class="p-float-label">
+          <input
+            type="text"
+            pInputText
+            [ngModel]="todoTask.value"
+            #todoTask="ngModel"
+            required
+            (keyup.enter)="addTodo()"
+            id="todo"
+            class="w-full"
+          />
+          <label for="todo">new todo</label>
+        </span>
       </div>
       <p-button
         icon="pi pi-check"
