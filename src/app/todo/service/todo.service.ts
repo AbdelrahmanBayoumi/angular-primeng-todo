@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './models/todo';
+import { Todo } from '../models/todo';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class AppService {
+@Injectable()
+export class TodoService {
   localStorageKey = 'angular-primeng-todo';
-
-  constructor() {}
 
   getTodoList(): Todo[] {
     const todos = localStorage.getItem(this.localStorageKey);
